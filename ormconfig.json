@@ -1,0 +1,26 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3000,
+    "username": "root",
+    "password": "12345",
+    "database": "lista_pessoas_2",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+        "src/entity/**/*.ts"
+    ],
+    "migrations": [
+        "src/migrations/**/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+
+    }
+
+
+
+
+}
