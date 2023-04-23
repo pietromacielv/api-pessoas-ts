@@ -1,16 +1,19 @@
 import { Router, Request, Response } from 'express'
-import { getPessoa, criaPessoa, getPessoaId, atualizaPessoa, deletaPessoa } from './controller/PessoaController'
-
+import { GetPessoa } from './controller/GetPessoa'
+import { GetPessoaId } from './controller/GetPessoaId'
+import { CriaPessoa } from './controller/CriaPessoa'
+import { AtualizaPessoa } from './controller/AtualizaPessoa'
+import { DeletaPessoa } from './controller/DeletaPessoa'
 const routes = Router()
 
 routes.get('/', (req: Request, res: Response) => {
     return res.json({ message: 'Hello World' })
 })
 
-routes.get('/pessoa', getPessoa)
-routes.get('/pessoa/:id', getPessoaId)
-routes.post('/pessoa', criaPessoa)
-routes.put('/pessoa/:id', atualizaPessoa)
-routes.delete('/pessoa/:id', deletaPessoa)
+routes.get('/pessoa', GetPessoa.getPessoa9)
+routes.get('/pessoa/:id', new GetPessoaId)
+routes.post('/pessoa', new CriaPessoa)
+routes.put('/pessoa/:id', new AtualizaPessoa)
+routes.delete('/pessoa/:id', new DeletaPessoa)
 
 export default routes
