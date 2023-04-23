@@ -10,10 +10,10 @@ routes.get('/', (req: Request, res: Response) => {
     return res.json({ message: 'Hello World' })
 })
 
-routes.get('/pessoa', new GetPessoa)
-routes.get('/pessoa/:id', new GetPessoaId)
-routes.post('/pessoa', new CriaPessoa)
-routes.put('/pessoa/:id', new AtualizaPessoa)
-routes.delete('/pessoa/:id', new DeletaPessoa)
+routes.get('/pessoa', (req, res) => new GetPessoa().getPessoa(req, res))
+routes.get('/pessoa/:id', (req, res) => new GetPessoaId().getPessoaId(req, res))
+routes.post('/pessoa', (req, res) => new CriaPessoa().criaPessoa(req, res))
+routes.put('/pessoa/:id', (req, res) => new AtualizaPessoa().atualizaPessoa(req, res))
+routes.delete('/pessoa/:id', (req, res) => new DeletaPessoa().deletaPessoa(req, res))
 
 export default routes
