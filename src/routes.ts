@@ -10,7 +10,7 @@ routes.get('/', (req: Request, res: Response) => {
     return res.json({ message: 'Hello World' })
 })
 
-routes.get('/pessoa', GetPessoa.getPessoa9)
+routes.get('/pessoa', new GetPessoa)
 routes.get('/pessoa/:id', new GetPessoaId)
 routes.post('/pessoa', new CriaPessoa)
 routes.put('/pessoa/:id', new AtualizaPessoa)
