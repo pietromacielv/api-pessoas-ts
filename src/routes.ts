@@ -1,19 +1,20 @@
 import { Router, Request, Response } from 'express'
-import { GetPessoaIdView } from './controller/view/GetPessoaIdView'
-import { CriaPessoaView } from './controller/view/CriaPessoaView'
-import { AtualizaPessoaView } from './controller/view/AtualizaPessoaView'
-import { GetPessoaView } from './controller/view/GetPessoaView'
-import { DeletaPessoaView } from './controller/view/DeletaPessoaView'
+import { GetPersonIdView } from './controller/view/GetPersonIdView'
+import { PostPersonView } from './controller/view/PostPersonView'
+import { PutPersonView } from './controller/view/PutPersonView'
+import { GetPersonView } from './controller/view/GetPersonView'
+import { DeletePersonView } from './controller/view/DeletePersonView'
+import { PutPerson } from './controller/PutPerson'
 const routes = Router()
 
 routes.get('/', (req: Request, res: Response) => {
     return res.json({ message: 'Hello World' })
 })
 
-routes.get('/pessoa', (req, res) => new GetPessoaView().listarPessoa(req, res))
-routes.get('/pessoa/:id', (req, res) => new GetPessoaIdView().listarPessoaId(req, res))
-routes.post('/pessoa', (req, res) => new CriaPessoaView().criarPessoa(req, res))
-routes.put('/pessoa/:id', (req, res) => new AtualizaPessoaView().atualizarPessoa(req, res))
-routes.delete('/pessoa/:id', (req, res) => new DeletaPessoaView().deletePessoa(req, res))
+routes.get('/person', (req, res) => new GetPersonView().personGet(req, res))
+routes.get('/person/:id', (req, res) => new GetPersonIdView().personGetById(req, res))
+routes.post('/person', (req, res) => new PostPersonView().personCreate(req, res))
+routes.put('/person/:id', (req, res) => new PutPersonView().personUpdate(req, res))
+routes.delete('/person/:id', (req, res) => new DeletePersonView().personDelete(req, res))
 
 export default routes

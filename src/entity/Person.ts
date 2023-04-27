@@ -1,22 +1,22 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity()
-export class Pessoa {
+export class Person {
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    nome: string;
+    name: string;
 
     @Column()
-    sobrenome: string;
+    surname: string;
 
     @Column()
-    idade: number;
+    age: number;
 
     @Column()
-    peso: number
+    weight: number
 
     @CreateDateColumn()
     created_at: Date;
