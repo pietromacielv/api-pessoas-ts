@@ -9,7 +9,7 @@ export class GetPersonIdView {
         const getPersonBody = await person.getPersonId(id)
         const validation = new GetPersonIdValidation
         if ( validation.validatePersonToGetById(getPersonBody) == false) {
-            res.status(404).json({message: `Error on getting person by id: the person with id ${id} doesn't exists. `})
+            res.status(404).json({error: `Error on getting person by id: the person with id ${id} doesn't exists. `})
         }
         res.json({message: getPersonBody}) // nao é preciso alterar o http status caso a resposta seja sucesso.
     }

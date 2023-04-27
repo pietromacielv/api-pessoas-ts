@@ -8,7 +8,7 @@ export class PostPersonView {
         const createdPersonBody = await createPerson.postPerson(req.body.name, req.body.surname, req.body.age, req.body.weight)
         const validation = new PostPersonValidation
         if (validation.validatePersonToCreate(req.body.name, req.body.surname, req.body.age, req.body.weight) == false) {
-            res.status(400).json({message: ' Missing field. Please review the requisition body elements Name - Surname - Age - Weight. '}) // o .status foi usado para alterar o http status para diferente de 200, que é o padrão
+            res.status(400).json({error: ' Missing field. Please review the requisition body elements Name - Surname - Age - Weight. '}) // o .status foi usado para alterar o http status para diferente de 200, que é o padrão
         }
         res.json({message: ' Person created successfully. ', createdPersonBody}) // nao é preciso alterar o http status caso a resposta seja sucesso.
     }

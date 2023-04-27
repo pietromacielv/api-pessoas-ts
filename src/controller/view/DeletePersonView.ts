@@ -9,7 +9,7 @@ export class DeletePersonView {
         const deletePerson = await person.deletePerson(id);
         const validation = new DeletePersonValidation();
         if (validation.validatePersonToDelete(deletePerson) == false) {
-            res.json({message: `Error on deleting person: the person with id ${id} doesn't exists. `});
+            res.json({error: `Error on deleting person: the person with id ${id} doesn't exists. `});
         }
         res.json({message: ' Person deleted succesfully. '}); // nao é preciso alterar o http status caso a resposta seja sucesso.
     }
