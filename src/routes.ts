@@ -4,6 +4,7 @@ import { PostPersonView } from './controller/view/PostPersonView'
 import { PutPersonView } from './controller/view/PutPersonView'
 import { GetPersonView } from './controller/view/GetPersonView'
 import { DeletePersonView } from './controller/view/DeletePersonView'
+import { error } from 'console'
 
 const routes = Router()
 
@@ -46,3 +47,5 @@ routes.put('/person/:id', (req, res) => new PutPersonView().personUpdate(req, re
 routes.delete('/person/:id', (req, res) => new DeletePersonView().personDelete(req, res))
 
 export default routes
+
+

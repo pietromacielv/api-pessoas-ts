@@ -1,8 +1,8 @@
 export class PostPersonValidation {
     validatePersonToCreate(firstBodyObject, secondBodyObject, thirdBodyObject, fourthBodyObject):boolean {
-        if (firstBodyObject.lenght == 0 || secondBodyObject.lenght == 0 || thirdBodyObject.lenght == 0 || fourthBodyObject.lenght == 0) {
-            return false
+        if (firstBodyObject.length == 0 || secondBodyObject.length == 0 || thirdBodyObject.length == 0 || fourthBodyObject.length == 0) {
+            return true
         }
-        return true
+        false
     }
 }

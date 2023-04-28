@@ -4,12 +4,14 @@ import { createConnection } from "typeorm"
 import routes from "./routes"
 
 
-const app = express()
+export const app = express()
+const porta = 3001
 
 createConnection()
 
 app.use(bodyParser.json())
 app.use(routes)
 
-app.listen(3001)
-
+app.listen(porta, () => {
+    console.log(`Servidor ouvindo na porta \x1b[32m${porta}\x1b[0m`);
+  });
