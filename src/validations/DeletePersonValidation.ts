@@ -1,5 +1,7 @@
+import { DeleteResult } from "typeorm"
+
 export class DeletePersonValidation {
-    validatePersonToDelete(person):boolean {
+    validatePersonToDelete(person: DeleteResult):boolean {
         if (person.affected == 0) {
             return true
         }

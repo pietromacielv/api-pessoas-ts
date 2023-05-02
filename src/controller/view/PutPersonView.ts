@@ -19,7 +19,7 @@ export class PutPersonView {
 
         const classValidation = new PutPersonValidation
         if (classValidation.validatePersonToUpdate(updatedPerson)) {
-            res.status(404).json({error: `Error on updating person: the person with id ${id} doesn't exists. `  })
+            res.status(404).json({error: ` Error on updating person: the person with id ${id} doesn't exists. `  })
         }
 
         const showUpdatedPerson = new GetPersonId();
