@@ -2,7 +2,7 @@ import * as express from "express"
 import * as bodyParser from "body-parser"
 import { createConnection } from "typeorm"
 import routes from "./routes"
-import { errorHandlerTool } from "./controller/error_func/errorFunction"
+import { errorHandlerTool } from "./controller/error_archives/errorFunction"
 
 
 export const app = express()
