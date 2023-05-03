@@ -17,7 +17,7 @@ routes.get('/', (res: Response) => {
 routes.get('/person', (req, res) => new GetPersonView().personGet(req, res))
 routes.get('/person/:id', (req, res, next) => new GetPersonIdView().personGetById(req, res, next))
 routes.post('/person', (req, res, next) => new PostPersonView().personCreate(req, res, next))
-routes.put('/person/:id', (req, res, next) => new PutPersonView().personUpdate(req, res))
+routes.put('/person/:id', (req, res, next) => new PutPersonView().personUpdate(req, res, next))
 routes.delete('/person/:id', (req, res, next) => new DeletePersonView().personDelete(req, res, next));
 
 
