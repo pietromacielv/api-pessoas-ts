@@ -11,7 +11,6 @@ export class DeletePersonView {
         const id = Number(req.params.id)
         try {
             const deletePerson = await person.deletePerson(id);
-
             const validation = new DeletePersonValidation();
             if (validation.validatePersonToDelete(deletePerson)) {
                 throw new Error(possibleErrorMessages.invalidId(id));
